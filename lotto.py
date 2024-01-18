@@ -30,7 +30,7 @@ def chuchom(select_numbers):
             one+=250000
         #print(select_numbers,random_numbers,correct)
         cost+=0.1
-        print("1등:{},2등:{},3등:{},4등:{},5등:{},총비용 {:0.0f}만원에 비해 당첨금 {:0.0f}만원...".format(one,two,three,four,five,cost,win))
+        print("\r1등:{},2등:{},3등:{},4등:{},5등:{},총비용 {:0.0f}만원에 비해 당첨금 {:0.0f}만원...".format(one,two,three,four,five,cost,win), end=' ')
     
     
 
