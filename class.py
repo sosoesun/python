@@ -1,5 +1,8 @@
 #클래스 사용법 복습
 
+from tool import clear_screen
+from time import sleep
+
 #전사 직군
 class Warrior:
     def __init__(self,hp,damage):
@@ -26,6 +29,8 @@ class Magician:
     def hit(self):
         print("얍!")
 
+
+
 if __name__ == "__main__":
     seungmin = Magician(5000,150) #인스턴스 생성
     soldier = Archer(500,10)
@@ -35,10 +40,12 @@ if __name__ == "__main__":
         print(f"soldier's hp = {soldier.hp}")
         seungmin.hit()
         soldier.hp -= seungmin.damage
+        sleep(1)
+
         if soldier.hp > 0:
-            #print(f"\rsoldier's hp = {soldier.hp}")
-            pass
+            clear_screen()
         else:
+            clear_screen()
             print("fallen soldier")
             break
 
