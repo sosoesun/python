@@ -2,6 +2,7 @@
 
 from tool import clear_screen
 from time import sleep
+from random import randint
 
 #전사 직군
 class Warrior:
@@ -33,13 +34,17 @@ class Magician:
 
 if __name__ == "__main__":
     seungmin = Magician(5000,150) #인스턴스 생성
-    soldier = Archer(500,10)
+    soldier = Archer(1000,10)
     
     while (seungmin.hp > 0):  
         print(f"seungmin's hp = {seungmin.hp}")  
         print(f"soldier's hp = {soldier.hp}")
         seungmin.hit()
-        soldier.hp -= seungmin.damage
+        if randint(1,2) == 1:
+            soldier.hp -= seungmin.damage
+        else:
+            soldier.hp -= seungmin.damage*2
+            print("critical hit!")
         sleep(1)
 
         if soldier.hp > 0:
@@ -47,5 +52,5 @@ if __name__ == "__main__":
         else:
             clear_screen()
             print("fallen soldier")
-            break
+            break 
 
